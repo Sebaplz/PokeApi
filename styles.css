@@ -1,0 +1,34 @@
+* {
+  text-align: center;
+  margin-top: 25px;
+  text-transform: capitalize;
+}
+body {
+  background-image: radial-gradient(
+    circle at 50% 50%,
+    #00cbed 0,
+    #00b8da 25%,
+    #21a5c5 50%,
+    #2d92b0 75%,
+    #32819c 100%
+  );
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.imgTitle {
+  height: 50px;
+  width: 50px;
+  margin-left: 20px;
+  margin-top: 0px;
+}
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  background-color: #eee;
+}
