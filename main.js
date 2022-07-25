@@ -41,6 +41,5 @@ const pintarCard = (pokemon) => {
 };
 
 function btnRandom() {
-  let random = getRandomInt(1, 152);
-  fetchData(random);
+  location.reload();
 }
