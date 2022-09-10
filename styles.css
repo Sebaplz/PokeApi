@@ -1,8 +1,3 @@
-* {
-  text-align: center;
-  margin-top: 25px;
-  text-transform: capitalize;
-}
 body {
   background-image: radial-gradient(
     circle at 50% 50%,
@@ -13,22 +8,25 @@ body {
     #32819c 100%
   );
 }
-.flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .imgTitle {
-  height: 50px;
-  width: 50px;
-  margin-left: 20px;
-  margin-top: 0px;
+  width: 10%;
 }
-.title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+@media only screen and (max-width: 800px) {
+  .w-25 {
+    width: 100% !important;
+    max-width: 400px;
+  }
 }
-.card {
-  background-color: #eee;
+h1 {
+  margin-right: 10px;
+}
+
+h5 {
+  text-transform: capitalize;
+}
+
+.input-group {
+  margin-left: 50px;
 }
