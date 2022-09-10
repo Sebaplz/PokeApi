@@ -1,45 +1,22 @@
-const flex = document.querySelector(".flex");
-const template = document.getElementById("card").content;
-const clone = template.cloneNode(true);
-const fragment = document.createDocumentFragment();
+const botonBuscar = document.getElementById("btnBuscar");
+const baseUrl = "https://pokeapi.co/api/v2/pokemon/";
 
-function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min)) + min;
+const min = 1;
+const max = 152;
+
+botonBuscar.addEventListener("click", getRandomInt);
+
+function getRandomInt() {
+  let idRandom = Math.floor(Math.random() * (max - min)) + min;
+  return buscarPokemon(idRandom);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  let random = getRandomInt(1, 152);
-  fetchData(random);
-});
-
-const fetchData = async (id) => {
-  try {
-    console.log(id);
-
-    const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
-    const data = await res.json();
-
-    console.log(data);
-
-    const pokemon = {
-      img: data.sprites.front_default,
-      nombre: data.name,
-    };
-
-    pintarCard(pokemon);
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-const pintarCard = (pokemon) => {
-  clone.querySelector(".card-img-top").setAttribute("src", pokemon.img);
-  clone.querySelector(".card-title").innerHTML = `${pokemon.nombre}`;
-
-  fragment.appendChild(clone);
-  flex.appendChild(fragment);
-};
-
-function btnRandom() {
-  location.reload();
+function buscarPokemon(idRandom) {
+  fetch(`${baseUrl}${idRandom}`)
+    .then((response) => response.json())
+    .then((data) => {
+      document.getElementById("nombrePokemon").innerHTML = data.name;
+      const pokemonImagen = document.querySelector("#imagenPokemon");
+      pokemonImagen.src = data.sprites.front_default;
+    });
 }
