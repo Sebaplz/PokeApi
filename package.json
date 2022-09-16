@@ -1,0 +1,23 @@
+{
+  "name": "pokeapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "build": "purgecss --css sass/custom.css --content index.html -o css/reducido.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sebaplz/PokeApi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sebaplz/PokeApi/issues"
+  },
+  "homepage": "https://github.com/Sebaplz/PokeApi#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.1"
+  }
+}
